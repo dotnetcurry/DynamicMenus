@@ -1,0 +1,88 @@
+﻿<div style="height: 550px; width: 370px; float: left; position: relative;">
+    <div id="newTile" class="tile tile-singlewidth">
+        <div class="tilecontent tile-singlewidth">
+            <ul id="newTileContent" class="tilecontenttext">
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+            </ul>
+        </div>
+        <div class="tilelabel">
+            What's New
+        </div>
+    </div>
+    <div id="projectsTile" class="tile tile-singlewidth">
+        <div class="tilecontent tile-singlewidth">
+            <ul id="projectsContent" class="tilecontenttext">
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+            </ul>
+        </div>
+        <div class="tilelabel">
+            Projects
+        </div>
+    </div>
+    <div id="blogTile" class="tile tile-singlewidth">
+        <div class="tilecontent tile-singlewidth">
+            <ul id="blogsTileContent" class="tilecontenttext">
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+            </ul>
+        </div>
+        <div class="tilelabel">
+            Blogs
+        </div>
+    </div>
+    <div id="galleryTile" class="tile tile-singlewidth">
+        <div class="tilecontent tile-singlewidth">
+            <ul id="galleryTileContent" class="tilecontenttext">
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+            </ul>
+        </div>
+        <div class="tilelabel">
+            Gallery
+        </div>
+    </div>
+    <div id="aboutTile" class="tile tile-singlewidth">
+        <div class="tilecontent tile-singlewidth">
+            <ul id="aboutTileContent" class="tilecontenttext">
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+                <li />
+            </ul>
+        </div>
+        <div class="tilelabel">
+            About Me
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#newTile').liveTile(['blogs', 'projects', 'pictures', 'social media']);
+        $('#projectsTile').liveTile(['SignalR', 'RavenDB', 'ASP.NET MVC', 'jQuery', 'jQuery Plugins', 'Hadoop']);
+        $('#blogTile').liveTile([]);
+        $('#galleryTile').liveTile(['Picasa']);
+        $('#aboutTile').liveTile(['@@dotnetcurry', '@@suprotimagarwal',
+        '@@sumitkm']);
+    });
+    
+</script>

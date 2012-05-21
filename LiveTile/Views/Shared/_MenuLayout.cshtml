@@ -1,0 +1,17 @@
+﻿@model LiveTile.Models.Menu
+<ul id="menu">
+    @{
+        if (Model != null)
+        {
+            foreach (var item in Model.MenuItems)
+            {
+        <li id="@item.Name">@Html.ActionLink(
+        @item.Name, 
+        @item.ActionName, 
+        @item.ControllerName)
+        </li>
+            }
+        }
+    }
+</ul>
+

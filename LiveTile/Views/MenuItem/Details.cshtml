@@ -1,0 +1,44 @@
+﻿@model LiveTile.Models.MenuItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>MenuItem</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ActionName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ActionName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ControllerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ControllerName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Url)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Url)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,58 @@
+﻿@model LiveTile.Models.MenuItem
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>MenuItem</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ActionName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ActionName)
+            @Html.ValidationMessageFor(model => model.ActionName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ControllerName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ControllerName)
+            @Html.ValidationMessageFor(model => model.ControllerName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Url)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Url)
+            @Html.ValidationMessageFor(model => model.Url)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

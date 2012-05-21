@@ -1,0 +1,56 @@
+﻿@model LiveTile.Models.Menu
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>
+    Details</h2>
+<fieldset>
+    <legend>Menu</legend>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    <fieldset>
+        @if (Model.MenuItems != null && Model.MenuItems.Count > 0)
+        {
+            <legend>Menu Items</legend>
+            foreach (var item in Model.MenuItems)
+            {
+            <div style="border: solid 1px #F0F0F0; margin: 2px">
+                <div class="comment-author">
+                    Text: @item.Name
+                </div>
+                <div class="comment-message">
+                    Action: @item.ActionName
+                </div>
+                <div class="comment-message">
+                    Controller: @item.ControllerName
+                </div>
+                <div class="comment-message">
+                    Url: @item.Url
+                </div>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", "MenuItem", 
+                    new { parentMenuId = Model.Id, id = item.Id }, null)
+                    |
+                    @Html.ActionLink("Delete", "Delete", "MenuItem", 
+                    new { parentMenuId = Model.Id, id = item.Id }, null)
+                </p>
+            </div>
+            }
+        }
+    </fieldset>
+    <div id="addMenuItem" style="display: inline;">
+        <div>
+            @Html.ActionLink("Add Menu Item", "Create", "MenuItem", 
+            new { parentMenuId = Model.Id }, null)
+        </div>
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

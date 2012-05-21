@@ -1,0 +1,241 @@
+body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #F0F0F0;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+section 
+{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+nav, #menucontainer
+{
+    background: white;
+    display: block;
+}
+
+nav
+{
+    height: 72px;
+}
+
+ul#menu
+{
+    border-top: 8px solid;
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    padding: 5px 5px 0px 12px;
+    border-top-color: #D2D2D2;
+}
+
+ul#menu li
+{
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li#greeting
+{
+    text-align: center;
+    border-top: 4px solid;
+}
+
+ul#menu li a
+{
+    font-weight: normal;
+    font-size: 1.6em;
+    line-height: 1.5em;
+    padding-top:12px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 9px;
+    text-decoration: none;
+    color: #666666;
+}
+
+ul#menu li a:hover
+{
+    border-top: 8px solid gray;
+    background-color: #F0F0F0;
+}
+
+.selectedMenu
+{
+    border-top: 8px solid;
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    display: inline;
+    list-style: none;
+    line-height: 1.5em;
+    padding-top: 7px;
+    padding-bottom: 11px;
+    text-decoration: none;
+    border-top: 8px solid #808080;
+    font-weight: bold;
+    color: #034af3;
+    background-color: #F0F0F0;
+}
+
+ul#menu li a:active
+{
+    border-top: 8px solid gray;
+}
+
+ul#menu li a:selected
+{
+    color: #034af3;
+}
+
+ul#menu li a:visited
+{
+    color: #666666;
+}
+
+header 
+{
+    font-family: Calibri,Cambria, Arial;
+    font-size: 2.25em;
+    font-weight: bold;    
+    padding: 10px;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+#scroller
+{
+    list-style: none;
+    padding: 0em;
+    border: 1px solid #9DB029;
+    margin: 0em 0;
+    text-align: right;
+}
+
+#scroller li
+{
+    border: 1px solid #ddd;
+    width: 173px;
+    margin: 0.0em;
+    padding: 0.0em;
+    background-color: #eee;
+    text-align: right;
+}
+
+.tilecontentheading
+{
+    font-size: 1.6em;
+}
+
+.tilecontenttext
+{
+    /*font-size: 1.2em; */
+    height: 110px;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.tile
+{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 175px;
+    background-color: #CFEAFE;
+    font-family: "Segoe UI" ,Helvetica,Garuda,Arial,sans-serif;
+}
+
+.tile-singlewidth
+{
+    width: 175px;
+}
+
+.tile-doublewidth
+{
+    width: 362px;
+}
+
+.tilecontent
+{
+    height: 130px;
+    text-align: right;
+}
+
+
+.tilecontenthover
+{
+    height: 130px;
+    opacity: .4;
+}
+
+.tilelabel
+{
+    height: 30px;
+    color: #666666;
+    padding-right: 1em;
+    text-transform: lowercase;
+    vertical-align: bottom;
+    text-align: left;
+    font-size: 1.4em;
+}
+
+.tilelabelhover
+{
+    background-color: #666666;
+    color: #ffffff;
+}
