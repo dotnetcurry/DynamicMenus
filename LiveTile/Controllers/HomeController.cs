@@ -14,8 +14,18 @@ namespace LiveTile.Controllers
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult MenuLayout(string name)
         {
-            Menu menu = db.Menus.Include("MenuItems").Single<Menu>(m => m.Name == "Main");
-            return PartialView("_MenuLayout", menu);
+            if (db.Menus.Count<Menu>() > 0 && 
+                db.MenuItems.Count<MenuItem>() > 0)
+            {
+                Menu menu = db.Menus
+                                .Include("MenuItems")
+                                .Single<Menu>(m => m.Name == "Main");
+                return PartialView("_MenuLayout", menu);
+            }
+            else
+            {
+                return PartialView("_MenuLayout", null);
+            }
         }
 
         //
