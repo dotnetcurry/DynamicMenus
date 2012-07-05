@@ -51,10 +51,11 @@ namespace LiveTile.Controllers
         {
             if (ModelState.IsValid)
             {
-                Menu menu = db.Menus.Single<Menu>(m => m.Id == parentMenuId);
-                menuitem.ParentMenu = menu;
-                db.MenuItems.Add(menuitem);
-                db.SaveChanges();
+                // TODO: Uncomment the code below
+                //Menu menu = db.Menus.Single<Menu>(m => m.Id == parentMenuId);
+                //menuitem.ParentMenu = menu;
+                //db.MenuItems.Add(menuitem);
+                //db.SaveChanges();
                 return RedirectToAction("Details", "Menu", new { id = parentMenuId });
             }
 
@@ -82,8 +83,9 @@ namespace LiveTile.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(menuitem).State = EntityState.Modified;
-                db.SaveChanges();
+                // TODO: Uncomment the code below
+                //db.Entry(menuitem).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("Details", "Menu", new { id = parentMenuId });
             }
             return View(menuitem);
@@ -108,9 +110,10 @@ namespace LiveTile.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int parentMenuId, int id)
         {
-            MenuItem menuitem = db.MenuItems.Find(id);
-            db.MenuItems.Remove(menuitem);
-            db.SaveChanges();
+            //TODO : Uncomment the code below
+            //MenuItem menuitem = db.MenuItems.Find(id);
+            //db.MenuItems.Remove(menuitem);
+            //db.SaveChanges();
             return RedirectToAction("Details", "Menu", new { id = parentMenuId });
         }
 

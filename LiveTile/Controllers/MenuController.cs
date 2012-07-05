@@ -26,7 +26,7 @@ namespace LiveTile.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Menu menu = db.Menus.Include("MenuItems").Single<Menu>(m=>m.Id==id);
+            Menu menu = db.Menus.Include("MenuItems").Single<Menu>(m => m.Id == id);
             if (menu == null)
             {
                 return HttpNotFound();
@@ -50,9 +50,11 @@ namespace LiveTile.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Menus.Add(menu);
-                db.SaveChanges();
+                // TODO: Disabled to prevent XSS attacks
+                //db.Menus.Add(menu);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
+
             }
 
             return View(menu);
@@ -79,11 +81,24 @@ namespace LiveTile.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(menu).State = EntityState.Modified;
-                db.SaveChanges();
+                if (!IsAdminMenu(menu))
+                {
+                    // TODO: Disabled to prevent XSS attacks on Demo
+                    //db.Entry(menu).State = EntityState.Modified;
+                    //db.SaveChanges();
+                }
                 return RedirectToAction("Index");
             }
             return View(menu);
+        }
+
+        //This is a hack to prevent script kiddie hackers,
+        //from deleting the Main Menus in the Demo Site
+        //Either remove this check or use it for something
+        //more useful in your application
+        private bool IsAdminMenu(Menu menu)
+        {
+            return (menu.Name == "Home" || menu.Name == "Menus");
         }
 
         //
@@ -105,9 +120,10 @@ namespace LiveTile.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Menu menu = db.Menus.Include("MenuItems").Single<Menu>(m=>m.Id == id);
-            db.Menus.Remove(menu);
-            db.SaveChanges();
+            // TODO: Disabled to prevent XSS Attacks
+            //Menu menu = db.Menus.Include("MenuItems").Single<Menu>(m => m.Id == id);
+            //db.Menus.Remove(menu);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 
